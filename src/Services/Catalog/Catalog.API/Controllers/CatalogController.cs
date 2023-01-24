@@ -71,7 +71,7 @@ public class CatalogController : ControllerBase
         return !result ? StatusCode((int)HttpStatusCode.InternalServerError) : NoContent();
     }
 
-    [HttpDelete]
+    [HttpDelete("{id:length(24)}")]
     [ProducesResponseType((int)HttpStatusCode.NoContent)]
     [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
     public async Task<IActionResult> DeleteProduct(string id)
